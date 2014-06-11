@@ -95,8 +95,9 @@ hr{
 /*==================================================HEADER=====================================================*/
 .header {
     @include model(100%, 120px);
+    min-width: 1100px;
     display: block;
-    position: fixed;
+    position: relative;
     z-index: 999;
     background-color: $Branco;
     transition: ease-in-out 0.5s;
@@ -106,6 +107,7 @@ hr{
 }
 .header2 {
     @include model(100%, 60px);
+    min-width: 1100px;
     display: block;
     box-shadow: 1px 1px 5px rgba(0,0,0, 0.3);
     position: fixed;
@@ -196,8 +198,12 @@ hr{
         }
     }
 }
+.active{
+    background-color:$Vermelho;
+    a{color: $Branco;}
+}
 .menu {
-    @include model(560px, 120px);
+    @include model(543px, 120px);
     transition: ease-in-out 0.5s;
                         -moz-transition: ease-in-out 0.5s;
                         -webkit-transition: ease-in-out 0.5s;
@@ -285,7 +291,7 @@ hr{
     }
 }
 .menu2 {
-    @include model(560px, 60px);
+    @include model(543px, 60px);
     float: right;
     transition: ease-in-out 0.5s;
                         -moz-transition: ease-in-out 0.5s;
@@ -377,7 +383,7 @@ hr{
     width: 1100px;
     height: 470px;
     display: block;
-    padding-top: 120px;
+    padding-top: 0px;
 }
 
 .banner {
@@ -442,7 +448,11 @@ hr{
     bottom: 20px;
     text-align: center;
 }
-
+.sl-shadow{
+    @include model(1100px,70px);
+    display: block;
+    background:url(../images/shadow.png);
+}
 .dots {
     li {
         display: inline-block;
@@ -534,8 +544,19 @@ hr{
     display: none;
 }
 /*====================================== RODAPE ===================================*/
+footer{
+    width: 100%;
+background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0.86) 62%, rgba(234,232,232,0.78) 100%, rgba(234,232,232,1) 101%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(62%,rgba(255,255,255,0.86)), color-stop(100%,rgba(234,232,232,0.78)), color-stop(101%,rgba(234,232,232,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.86) 62%,rgba(234,232,232,0.78) 100%,rgba(234,232,232,1) 101%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.86) 62%,rgba(234,232,232,0.78) 100%,rgba(234,232,232,1) 101%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.86) 62%,rgba(234,232,232,0.78) 100%,rgba(234,232,232,1) 101%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.86) 62%,rgba(234,232,232,0.78) 100%,rgba(234,232,232,1) 101%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eae8e8',GradientType=0 ); /* IE6-9 */
+
+}
 .rodape{
-    section{
+ section{
         width: 240px;
         float: left;
         font-size: 12px;
@@ -589,6 +610,9 @@ hr{
                 &:hover{
                     position:relative;
                     left: 2px;
+                }
+                a{
+                    &:hover{color: $Vermelho;}
                 }
             }
         }
@@ -664,3 +688,21 @@ hr{
             transition: background .2s, opacity .2s;
         }
     }
+.copy{
+    @include model(100%,37px);
+    border-top: 3px solid $CinzaClaro;
+    padding:20px 0;
+    margin-top: 15px;
+    p{
+        font-family: $Avevir;
+        font-size: 13px;
+        text-align: left;
+        height: 37px;
+        line-height: 37px;
+        width: 600px;
+        float: left;
+    }
+    figure{
+        float: right;
+    }
+}

@@ -1,3 +1,5 @@
+/*==============================================================================*/
+
 $(document).ready(function() {
     $('.banner').unslider({
         speed: 1000, //  The speed to animate each slide (in milliseconds)
@@ -20,6 +22,7 @@ $(document).ready(function() {
             $(".fone-menu2").removeClass('fone-menu');
             $(".menu").addClass('menu2');
             $(".menu2").removeClass('menu');
+            $(".slider").css("padding-top", "120px");
         } else {
             $(".header2").addClass('header');
             $(".header").removeClass('header2');
@@ -29,6 +32,7 @@ $(document).ready(function() {
             $(".fone-menu").removeClass('fone-menu2');
             $(".menu2").addClass('menu');
             $(".menu").removeClass('menu2');
+            $(".slider").css("padding-top", "0px");
 
         }
     });
